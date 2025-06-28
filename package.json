@@ -1,0 +1,23 @@
+{
+  "name": "modern-clothing-brand-homepage",
+  "version": "1.0.0",
+  "description": "A modern clothing brand homepage showcasing products and brand identity.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step not defined'",
+    "test": "echo 'No tests defined'"
+  },
+  "keywords": [
+    "clothing",
+    "fashion",
+    "homepage",
+    "modern"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
