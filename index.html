@@ -5,8 +5,8 @@
     <meta name="description" content="SSKY Printing: Custom Posters, Die-cut Stickers, Wall Posters, and Custom Stickers. High-quality, fast, and creative printing solutions.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSKY - Custom Printing Solutions</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/svg+xml" href="src/assets/favicon.svg">
+    <link rel="stylesheet" href="src/styles/style.css">
     <style>
         /* ===== MODERN DESIGN SYSTEM ===== */
         
@@ -184,7 +184,6 @@
             justify-content: space-between;
             height: 4rem;
             gap: var(--space-6);
-            background: transparent !important;
         }
 
         /* Logo */
@@ -196,14 +195,14 @@
         }
 
         .logo-enhanced {
-            width: 3rem;
-            height: 3rem;
+            width: 120px;
+            height: auto;
+            max-width: 120px;
             transition: transform var(--transition-normal);
-            filter: drop-shadow(0 2px 4px var(--brand-red-light));
         }
 
         .logo-enhanced:hover {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.05);
         }
 
         /* Navigation Links */
@@ -226,30 +225,17 @@
             gap: var(--space-1);
             padding: var(--space-2) var(--space-4);
             color: var(--text-secondary);
-            text-decoration: none !important;
+            text-decoration: none;
             font-size: var(--text-sm);
             font-weight: 500;
             border-radius: var(--radius-lg);
             transition: all var(--transition-fast);
-            background: transparent !important;
-            border-bottom: none !important;
         }
 
         .nav-links li a:hover,
         .nav-links li a.active {
             color: var(--brand-red);
-            background-color: var(--brand-red-light) !important;
-        }
-
-        .nav-links li a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: var(--space-4);
-            right: var(--space-4);
-            height: 2px;
-            background: var(--brand-red);
-            border-radius: var(--radius-full);
+            background-color: var(--brand-red-light);
         }
 
         /* Dropdown */
@@ -850,34 +836,34 @@
     <header>
         <nav role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <a href="index.html">
-                    <img src="assets/logo-final.png" alt="SSKY Logo" class="logo-enhanced" style="width: 120px; height: auto; max-width: 120px;">
+                <a href="/">
+                    <img src="src/assets/logo-final.png" alt="SSKY Logo" class="logo-enhanced" style="width: 120px; height: auto; max-width: 120px;">
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="#home" class="active" aria-current="page">Home</a></li>
                 <li tabindex="0">
                     <a href="#products" aria-haspopup="true" aria-expanded="false">Products</a>
                     <ul class="sub-links" role="menu">
-                        <li><a href="posters/index.html" role="menuitem">
+                        <li><a href="/posters/" role="menuitem">
                             <svg width="18" height="18" viewBox="0 0 24 24" style="vertical-align:middle;"><path fill="currentColor" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                             Posters
                         </a></li>
-                        <li><a href="die-cut-stickers/index.html" role="menuitem">
+                        <li><a href="/die-cut-stickers/" role="menuitem">
                             <svg width="18" height="18" viewBox="0 0 24 24" style="vertical-align:middle;"><path fill="currentColor" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path></svg>
                             Die-cut Stickers
                         </a></li>
-                        <li><a href="custom-wall-posters/index.html" role="menuitem">
+                        <li><a href="/custom-wall-posters/" role="menuitem">
                             <svg width="18" height="18" viewBox="0 0 24 24" style="vertical-align:middle;"><path fill="currentColor" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                             Custom Wall Posters
                         </a></li>
-                        <li><a href="custom-stickers/index.html" role="menuitem">
+                        <li><a href="/custom-stickers/" role="menuitem">
                             <svg width="18" height="18" viewBox="0 0 24 24" style="vertical-align:middle;"><path fill="currentColor" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
                             Custom Stickers
                         </a></li>
                     </ul>
                 </li>
-                <li><a href="about/index.html">About</a></li>
+                <li><a href="/about/">About</a></li>
                 <li>
                     <a href="#contact" aria-haspopup="true" aria-expanded="false">Contact</a>
                     <ul class="sub-links" role="menu">
@@ -955,30 +941,30 @@
     <section class="product-section" id="products">
         <h2 class="animate-on-scroll">Our Printing Categories</h2>
         <div class="product-grid" id="productGrid">
-            <div class="product-item slide-in-left" onclick="window.location.href='posters/index.html'">
+            <div class="product-item slide-in-left" onclick="window.location.href='/posters/'">
                 <img src="https://m.media-amazon.com/images/I/61IquBLRCiL._SY741_.jpg" 
                      alt="High-quality printed posters display" 
                      loading="lazy" 
                      width="150" 
                      height="150"
-                     onerror="this.src='src/assets/new photos/Poloraid.jpg'; this.onerror=null;">
+                     onerror="this.src='assets/new photos/Poloraid.jpg'; this.onerror=null;">
                 <h3>Posters</h3>
             </div>
-            <div class="product-item slide-in-left" onclick="window.location.href='die-cut-stickers/index.html'">
+            <div class="product-item slide-in-left" onclick="window.location.href='/die-cut-stickers/'">
                 <img src="https://m.media-amazon.com/images/I/61PrsUQoNnL._SX679_.jpg" 
                      alt="Professional die-cut vinyl stickers" 
                      loading="lazy" 
                      width="150" 
                      height="150"
-                     onerror="this.src='src/assets/new photos/7.jpg'; this.onerror=null;">
+                     onerror="this.src='assets/new photos/7.jpg'; this.onerror=null;">
                 <h3>Die-cut Stickers</h3>
             </div>
             <div class="product-item slide-in-right" onclick="window.open('https://forms.google.com/custom-wall-posters', '_blank')">
-                <img src="src/assets/new photos/Poloraid.jpg" alt="Custom wall art installation in modern space" loading="lazy" width="150" height="150">
+                <img src="assets/new photos/Poloraid.jpg" alt="Custom wall art installation in modern space" loading="lazy" width="150" height="150">
                 <h3>Custom Wall Posters</h3>
             </div>
             <div class="product-item slide-in-right" onclick="window.open('https://forms.google.com/custom-stickers', '_blank')">
-                <img src="src/assets/new photos/7.jpg" alt="Custom branded stickers collection" loading="lazy" width="150" height="150">
+                <img src="assets/new photos/7.jpg" alt="Custom branded stickers collection" loading="lazy" width="150" height="150">
                 <h3>Custom Stickers</h3>
             </div>
         </div>
@@ -1040,261 +1026,68 @@
                 @sskystickers
             </div>
         </div>
-    </footer>
-
-    <!-- Developer Credit -->
-    <div class="developer-credit" role="contentinfo" aria-label="Developer information">
-        <p>Designed and developed by Krrish Sharma</p>
-    </div>
-
-    <script src="scripts/app.js"></script>
-    <script>
-        // Clean SSKY Website JavaScript - Admin Modal Code Completely Removed
-        class SSKYWebsite {
-            constructor() {
-                this.currentIndex = 0;
-                this.totalImages = 5; // Updated to reflect actual working images
-                this.autoSlideInterval = null;
-                this.loadingTimeout = null;
-                this.init();
-            }
-
-            init() {
-                this.setupSlider();
-                this.setupThemeToggle();
-                this.setupScrollAnimations();
-                this.setupNavigation();
-                this.optimizeLoading();
-            }
-
-            // Enhanced Slider with optimized loading (under 1s)
-            setupSlider() {
-                this.startAutoSlide();
-                
-                const slider = document.querySelector('.slider');
-                if (slider) {
-                    slider.addEventListener('mouseenter', () => this.stopAutoSlide());
-                    slider.addEventListener('mouseleave', () => this.startAutoSlide());
-                }
-
-                // Remove arrow control setup since arrows are hidden
-                this.updateSlider();
-            }
-
-            nextSlide() {
-                this.currentIndex = (this.currentIndex + 1) % this.totalImages;
-                this.updateSlider();
-            }
-
-            prevSlide() {
-                this.currentIndex = (this.currentIndex - 1 + this.totalImages) % this.totalImages;
-                this.updateSlider();
-            }
-
-            updateSlider() {
-                this.showLoading();
-                
-                // Clear any existing timeout
-                if (this.loadingTimeout) {
-                    clearTimeout(this.loadingTimeout);
-                }
-
-                // Enhanced smooth transition with fade effect
-                const slidesContainer = document.getElementById('slider-images');
-                const images = slidesContainer.querySelectorAll('img');
-                
-                // Add fade out effect to current image
-                images.forEach((img, index) => {
-                    if (index !== this.currentIndex) {
-                        img.classList.add('fade-out');
-                        img.classList.remove('fade-in');
-                    }
-                });
-
-                // Optimized loading with smooth transition
-                this.loadingTimeout = setTimeout(() => {
-                    if (slidesContainer) {
-                        const translateX = -this.currentIndex * 100;
-                        slidesContainer.style.transform = `translateX(${translateX}%)`;
-                        
-                        // Add fade in effect to new current image
-                        setTimeout(() => {
-                            images.forEach((img, index) => {
-                                if (index === this.currentIndex) {
-                                    img.classList.add('fade-in');
-                                    img.classList.remove('fade-out');
-                                }
-                            });
-                        }, 100);
-                    }
-                    this.hideLoading();
-                }, 300);
-            }
-
-            showLoading() {
-                const loading = document.getElementById('slider-loading');
-                if (loading) {
-                    loading.style.display = 'block';
-                }
-            }
-
-            hideLoading() {
-                const loading = document.getElementById('slider-loading');
-                if (loading) {
-                    loading.style.display = 'none';
-                }
-            }
-
-            startAutoSlide() {
-                this.autoSlideInterval = setInterval(() => {
-                    this.nextSlide();
-                }, 3000);
-            }
-
-            stopAutoSlide() {
-                if (this.autoSlideInterval) {
-                    clearInterval(this.autoSlideInterval);
-                    this.autoSlideInterval = null;
-                }
-            }
-
-            // Enhanced Theme toggle functionality
-            setupThemeToggle() {
-                const themeToggle = document.getElementById('darkModeToggle');
-                const themeIcon = document.getElementById('toggleIcon');
-                const tooltip = document.getElementById('toggleTooltip');
-                const body = document.body;
-
-                // Check for saved theme preference
-                const savedTheme = localStorage.getItem('theme') || 'light';
-                body.setAttribute('data-theme', savedTheme);
-                this.updateThemeIcon(savedTheme);
-
-                if (themeToggle) {
-                    themeToggle.addEventListener('click', () => {
-                        const currentTheme = body.getAttribute('data-theme');
-                        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                        
-                        body.setAttribute('data-theme', newTheme);
-                        localStorage.setItem('theme', newTheme);
-                        this.updateThemeIcon(newTheme);
-                        
-                        // Update tooltip
-                        if (tooltip) {
-                            tooltip.textContent = newTheme === 'dark' 
-                                ? 'Toggle to light mode' 
-                                : 'Toggle to dark mode';
-                        }
-                    });
-                }
-            }
-
-            updateThemeIcon(theme) {
-                const themeIcon = document.getElementById('toggleIcon');
-                
-                if (themeIcon) {
-                    if (theme === 'dark') {
-                        themeIcon.innerHTML = `
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-                            </svg>
-                        `;
-                    } else {
-                        themeIcon.innerHTML = `
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
-                            </svg>
-                        `;
-                    }
-                }
-            }
-
-            // Scroll-based animations
-            setupScrollAnimations() {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animate');
-                        }
-                    });
-                }, observerOptions);
-
-                // Observe all elements with animation classes
-                document.querySelectorAll('.animate-on-scroll, .slide-in-left, .slide-in-right').forEach(el => {
-                    observer.observe(el);
-                });
-            }
-
-            // Navigation functionality
-            setupNavigation() {
-                // Active link highlighting
-                const navLinks = document.querySelectorAll('.nav-links a');
-                const sections = document.querySelectorAll('section[id]');
-
-                const observerOptions = {
-                    threshold: 0.3,
-                    rootMargin: '-20% 0px -20% 0px'
-                };
-
-                const navObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const targetId = entry.target.id;
-                            navLinks.forEach(link => {
-                                link.classList.remove('active');
-                                if (link.getAttribute('href') === `#${targetId}`) {
-                                    link.classList.add('active');
-                                }
-                            });
-                        }
-                    });
-                }, observerOptions);
-
-                sections.forEach(section => {
-                    navObserver.observe(section);
-                });
-
-                // Smooth scrolling for anchor links
-                navLinks.forEach(link => {
-                    if (link.getAttribute('href').startsWith('#')) {
-                        link.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            const targetId = link.getAttribute('href').substring(1);
-                            const targetElement = document.getElementById(targetId);
-                            
-                            if (targetElement) {
-                                targetElement.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                });
-                            }
-                        });
-                    }
-                });
-            }
-
-            // Performance optimizations
-            optimizeLoading() {
-                // Preload critical images
-                const criticalImages = document.querySelectorAll('img[loading="lazy"]');
-                criticalImages.forEach((img, index) => {
-                    if (index < 3) { // Preload first 3 images
-                        img.loading = 'eager';
-                    }
-                });
-
-                // Optimize slider loading
-                this.hideLoading();
-            }
-        }
-
-        // Initialize website
-        const website = new SSKYWebsite();
-    </script>
-</body>
-</html>
+        <div class="footer-contact-row" id="contact">
+            <div class="footer-logo-section animate-on-scroll">
+                <img src="assets/logo-final.png" alt="SSKY Printing logo" class="footer-logo">
+            </div>
+            <div class="footer-contact-item animate-on-scroll">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                +91 95608 48344
+            </div>
+            <div class="footer-contact-item animate-on-scroll">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                sskyprinters@gmail.com
+            </div>
+            <div class="footer-contact-item animate-on-scroll">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                @sskystickers
+            </div>
+        </div>
+        <div class="footer-contact-row" id="contact">
+            <div class="footer-logo-section animate-on-scroll">
+                <img src="assets/logo-final.png" alt="SSKY Printing logo" class="footer-logo">
+            </div>
+            <div class="footer-contact-item animate-on-scroll">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                +91 95608 48344
+            </div>
+            <div class="footer-contact-item animate-on-scroll">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                sskyprinters@gmail.com
+            </div>
+            <div class="footer-contact-item animate-on-scroll">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                @sskystickers
+            </div>
+        </div>
+        <div class="footer-contact-row" id="contact">
+            <div class="footer-logo-section animate-on-scroll">
+                <img src="assets/logo-final.png" alt="SSKY Printing logo" class="footer-logo">
+            </div>
+            <div class="footer-contact-item animate-on-scroll">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                +91 95608 48344
+            </div>
+            <div class="footer-contact-item animate-on-scroll">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                sskyprinters@gmail.com
+            </div>
+            <div class="footer-contact-item animate-on-scroll">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072

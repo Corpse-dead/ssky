@@ -5,8 +5,8 @@
     <meta name="description" content="SSKY Printing Die-cut Stickers - Premium custom die-cut stickers in various categories. High-quality, waterproof, and durable printing solutions.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Die-cut Stickers - SSKY Printing</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/svg+xml" href="../src/assets/favicon.svg">
+    <link rel="stylesheet" href="../src/styles/style.css">
     <style>
         /* ===== THEME VARIABLES ===== */
         :root {
@@ -990,44 +990,6 @@
             outline: 2px solid var(--brand-red);
             outline-offset: 2px;
         }
-
-        /* ===== DEVELOPER CREDIT STYLES ===== */
-        
-        .developer-credit {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--border-color);
-            padding: var(--space-6) 0;
-            text-align: center;
-            margin-top: var(--space-4);
-        }
-
-        .footer-logo {
-            width: 120px;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .footer-logo:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .developer-credit {
-                padding: var(--space-4) 0;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .footer-logo {
-                width: 100px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer-logo {
-                width: 90px;
-            }
-        }
     </style>
 </head>
 <body data-theme="light">
@@ -1035,15 +997,15 @@
     <header>
         <nav role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <a href="src/index.html">
-                    <img src="src/assets/logo-final.png" alt="SSKY Logo" style="width: 120px; height: auto; max-width: 120px;">
+                <a href="../src/index.html">
+                    <img src="../src/assets/logo-final.png" alt="SSKY Logo" style="width: 120px; height: auto; max-width: 120px;">
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="src/index.html">Home</a></li>
+                <li><a href="../src/index.html">Home</a></li>
                 <li><a href="#" class="active" aria-current="page">Products</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="src/index.html#contact">Contact</a></li>
+                <li><a href="../about/index.html">About</a></li>
+                <li><a href="../src/index.html#contact">Contact</a></li>
             </ul>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                 <svg class="theme-icon" id="themeIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1056,7 +1018,7 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="breadcrumb-container">
-            <a href="src/index.html">Home</a>
+            <a href="../src/index.html">Home</a>
             <span class="breadcrumb-separator">›</span>
             <span>Die-cut Stickers</span>
         </div>

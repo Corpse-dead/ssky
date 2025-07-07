@@ -876,32 +876,25 @@
             margin-top: 1rem;
         }
 
-        .developer-credit p {
-            color: #999;
-            font-size: 12px;
-            font-weight: 400;
-            margin: 0;
-            padding: 0 1.5rem;
-            line-height: 1.4;
-            letter-spacing: 0.025em;
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            transition: transform 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            .developer-credit {
-                padding: 1.25rem 0;
-            }
+        .footer-logo:hover {
+            transform: scale(1.05);
         }
 
         @media (max-width: 640px) {
-            .developer-credit p {
-                padding: 0 1rem;
-                font-size: 11px;
+            .footer-logo {
+                width: 100px;
             }
         }
 
         @media (max-width: 480px) {
-            .developer-credit p {
-                font-size: 10px;
+            .footer-logo {
+                width: 90px;
             }
         }
     </style>
