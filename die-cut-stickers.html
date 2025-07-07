@@ -990,6 +990,45 @@
             outline: 2px solid var(--brand-red);
             outline-offset: 2px;
         }
+
+        /* ===== DEVELOPER CREDIT STYLES ===== */
+        
+        .developer-credit {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            padding: var(--space-6) 0;
+            text-align: center;
+            margin-top: var(--space-4);
+        }
+
+        .developer-credit p {
+            color: #999;
+            font-size: 12px;
+            font-weight: 400;
+            margin: 0;
+            padding: 0 var(--space-6);
+            line-height: 1.4;
+            letter-spacing: 0.025em;
+        }
+
+        @media (max-width: 768px) {
+            .developer-credit {
+                padding: var(--space-4) 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .developer-credit p {
+                padding: 0 var(--space-4);
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .developer-credit p {
+                font-size: 10px;
+            }
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -1086,6 +1125,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Developer Credit -->
+    <div class="developer-credit" role="contentinfo" aria-label="Developer information">
+        <p>Designed and developed by Krrish Sharma</p>
+    </div>
 
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
