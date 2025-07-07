@@ -199,8 +199,10 @@
         }
 
         .logo-enhanced {
-            width: 3rem;
-            height: 3rem;
+            width: clamp(8.25rem, 10.5vw, 12rem);
+            height: auto;
+            max-width: none;
+            object-fit: contain;
             transition: transform var(--transition-normal);
             filter: drop-shadow(0 2px 4px var(--brand-red-light));
             border-radius: var(--radius-sm);
@@ -825,25 +827,12 @@
                 gap: var(--space-4);
             }
 
-            .nav-links {
-                order: 3;
-                width: 100%;
-                margin: 0;
-                margin-top: var(--space-4);
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: var(--space-2);
+            .logo-enhanced {
+                width: clamp(7.5rem, 9.75vw, 9.75rem);
+                height: auto;
             }
 
-            .search-bar {
-                order: 2;
-                min-width: 260px;
-                max-width: 320px;
-            }
-
-            #darkModeToggle {
-                margin-left: 0;
-            }
+            /* ...existing code... */
         }
 
         @media (max-width: 768px) {
@@ -861,8 +850,8 @@
             }
 
             .logo-enhanced {
-                width: 2.5rem;
-                height: 2.5rem;
+                width: clamp(6.75rem, 9vw, 8.25rem);
+                height: auto;
             }
         }
 
@@ -1065,7 +1054,7 @@
             </div>
             <div class="footer-contact-item animate-on-scroll">
                 <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2zM4 20V8.99l8 7 8-7V20H4z"/>
                 </svg>
                 sskyprinters@gmail.com
             </div>

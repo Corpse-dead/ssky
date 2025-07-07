@@ -154,6 +154,7 @@
             justify-content: space-between;
             height: 4.5rem;
             gap: var(--space-8);
+            background: transparent !important;
         }
 
         /* Logo */
@@ -162,12 +163,13 @@
             align-items: center;
             gap: var(--space-3);
             flex-shrink: 0;
+            z-index: 10;
         }
 
         .logo-enhanced {
-            width: 120px;
+            width: 100px;
             height: auto;
-            max-width: 120px;
+            object-fit: contain;
             transition: transform var(--transition-normal);
             filter: drop-shadow(0 2px 4px var(--brand-red-light));
             border-radius: var(--radius-sm);
@@ -175,13 +177,6 @@
 
         .logo-enhanced:hover {
             transform: scale(1.05) rotate(2deg);
-        }
-
-        .logo-text {
-            font-size: var(--text-xl);
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
         }
 
         /* Navigation Links */
@@ -205,11 +200,13 @@
             gap: var(--space-2);
             padding: var(--space-3) var(--space-5);
             color: var(--text-secondary);
-            text-decoration: none;
+            text-decoration: none !important;
             font-size: var(--text-sm);
             font-weight: 600;
             border-radius: var(--radius-xl);
             transition: all var(--transition-fast);
+            background: transparent !important;
+            border-bottom: none !important;
             position: relative;
             overflow: hidden;
         }
@@ -232,7 +229,7 @@
         .nav-links li a:hover,
         .nav-links li a.active {
             color: var(--brand-red);
-            background-color: var(--brand-red-light);
+            background: var(--brand-red-light) !important;
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(230, 0, 35, 0.15);
         }
@@ -250,7 +247,7 @@
         }
 
         /* Theme Toggle */
-        .theme-toggle {
+        #themeToggle {
             width: 2.75rem;
             height: 1.75rem;
             background: var(--bg-secondary);
@@ -265,7 +262,7 @@
             flex-shrink: 0;
         }
 
-        .theme-toggle:hover {
+        #themeToggle:hover {
             border-color: var(--brand-red);
             box-shadow: 0 2px 8px rgba(230, 0, 35, 0.15);
         }
@@ -280,6 +277,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--text-secondary);
         }
 
         [data-theme="dark"] .theme-toggle-indicator {
@@ -290,7 +288,6 @@
         .theme-icon {
             width: 0.75rem;
             height: 0.75rem;
-            color: var(--text-secondary);
             transition: all var(--transition-fast);
         }
 
@@ -844,6 +841,11 @@
             .search-container {
                 min-width: auto;
             }
+
+            .logo-enhanced {
+                width: 90px;
+                height: auto;
+            }
         }
 
         @media (max-width: 768px) {
@@ -857,7 +859,8 @@
             }
 
             .logo-enhanced {
-                width: 100px;
+                width: 80px;
+                height: auto;
             }
         }
 

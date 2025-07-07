@@ -94,14 +94,14 @@
             position: sticky;
             top: 0;
             z-index: var(--z-sticky);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
+            background: transparent;
+            backdrop-filter: none;
+            border-bottom: none;
             transition: all var(--transition-normal);
         }
 
         [data-theme="dark"] header {
-            background: rgba(15, 23, 42, 0.95);
+            background: transparent;
         }
 
         nav {
@@ -113,6 +113,7 @@
             justify-content: space-between;
             height: 4rem;
             gap: var(--space-6);
+            background: transparent;
         }
 
         .logo {
@@ -123,9 +124,10 @@
         }
 
         .logo-enhanced {
-            width: 120px;
+            width: 100px;
             height: auto;
-            max-width: 120px;
+            max-width: none;
+            object-fit: contain;
             transition: transform var(--transition-normal);
         }
 
@@ -432,6 +434,13 @@
         }
 
         /* Responsive design */
+        @media (max-width: 1024px) {
+            .logo-enhanced {
+                width: 90px;
+                height: auto;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: var(--text-2xl);
@@ -467,6 +476,11 @@
             .content-section {
                 padding: var(--space-12) 0;
             }
+
+            .logo-enhanced {
+                width: 80px;
+                height: auto;
+            }
         }
 
         @media (max-width: 640px) {
@@ -489,6 +503,11 @@
 
             .mission-statement::before {
                 display: none;
+            }
+
+            .logo-enhanced {
+                width: 75px;
+                height: auto;
             }
         }
 
@@ -553,7 +572,7 @@
         <nav role="navigation" aria-label="Main navigation">
             <div class="logo">
                 <a href="index.html">
-                    <img src="assets/logo-final.png" alt="SSKY Logo" class="logo-enhanced" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiNFNjAwMjMiLz48dGV4dCB4PSI2MCIgeT0iNDUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWkiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U1NLWTI8L3RleHQ+PC9zdmc+'">
+                    <img src="assets/logo-final.png" alt="SSKY Logo" class="logo-enhanced" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiNFNjAwMjMiLz48dGV4dCB4PSI2MCIgeT0iNDUiIGZvcnQtZmFtaWx5PSJzeXN0ZW0tdWkiIGZvcnQtc2l6ZT0iMjQiIGZvcnQtV2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U1NLWTI8L3RleHQ+PC9zdmc+'">
                 </a>
             </div>
             <ul class="nav-links">
