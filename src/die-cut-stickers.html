@@ -5,8 +5,8 @@
     <meta name="description" content="SSKY Printing Die-cut Stickers - Premium custom die-cut stickers in various categories. High-quality, waterproof, and durable printing solutions.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Die-cut Stickers - SSKY Printing</title>
-    <link rel="icon" type="image/svg+xml" href="../src/assets/favicon.svg">
-    <link rel="stylesheet" href="../src/styles/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="styles/style.css">
     <style>
         /* ===== THEME VARIABLES ===== */
         :root {
@@ -113,13 +113,18 @@
 
         /* ===== HEADER STYLES ===== */
         header {
-            background: var(--bg-primary);
+            background: rgba(255, 255, 255, 0.98);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(16px);
             transition: all var(--transition-default);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="dark"] header {
+            background: rgba(15, 23, 42, 0.98);
         }
 
         nav {
@@ -129,12 +134,15 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--space-4) var(--space-6);
+            height: 4.5rem;
+            gap: var(--space-6);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: var(--space-2);
+            gap: var(--space-3);
+            flex-shrink: 0;
         }
 
         .logo img {
@@ -142,6 +150,12 @@
             height: auto;
             max-width: 120px;
             border-radius: var(--radius-sm);
+            transition: transform var(--transition-default);
+            filter: drop-shadow(0 2px 4px rgba(230, 0, 35, 0.1));
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
         }
 
         .logo-text {
@@ -154,38 +168,56 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: var(--space-8);
+            gap: var(--space-6);
             align-items: center;
+            margin: 0;
         }
 
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: var(--text-sm);
             position: relative;
-            padding: var(--space-2) 0;
+            padding: var(--space-3) var(--space-4);
+            border-radius: var(--radius-xl);
             transition: all var(--transition-default);
+            overflow: hidden;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(230, 0, 35, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-links a:hover::before {
+            left: 100%;
         }
 
         .nav-links a.active,
         .nav-links a:hover {
             color: var(--brand-red);
+            background: var(--brand-red-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(230, 0, 35, 0.15);
         }
 
-        .nav-links a::after {
+        .nav-links a.active::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
             height: 2px;
             background: var(--brand-red);
-            transition: width var(--transition-default) var(--smooth-ease);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
+            border-radius: var(--radius-full);
         }
 
         /* Theme Toggle */
@@ -193,24 +225,43 @@
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-full);
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 28px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             cursor: pointer;
             transition: all var(--transition-default);
+            padding: 3px;
+            position: relative;
         }
 
         .theme-toggle:hover {
             background: var(--bg-tertiary);
-            transform: scale(1.1);
+            border-color: var(--brand-red);
+            box-shadow: 0 2px 8px rgba(230, 0, 35, 0.15);
         }
 
         .theme-icon {
             width: 20px;
             height: 20px;
             color: var(--text-secondary);
+            background: var(--bg-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-default);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] .theme-icon {
+            transform: translateX(20px);
+        }
+
+        .theme-icon svg {
+            width: 12px;
+            height: 12px;
         }
 
         /* ===== BREADCRUMB ===== */
@@ -933,31 +984,36 @@
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            nav {
+                flex-wrap: wrap;
+                height: auto;
+                padding: var(--space-3) var(--space-4);
+                gap: var(--space-4);
+            }
+
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: var(--space-3);
+                gap: var(--space-3);
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                flex-wrap: wrap;
+                gap: var(--space-2);
             }
-            
-            .controls-container {
-                flex-direction: column;
-                align-items: stretch;
+
+            .nav-links a {
+                padding: var(--space-2) var(--space-3);
+                font-size: var(--text-xs);
             }
-            
-            .category-filters {
-                justify-content: center;
-            }
-            
-            .search-container {
-                min-width: auto;
-            }
-            
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: var(--space-6);
-            }
-            
-            .page-header {
-                padding: var(--space-12) var(--space-4;
+
+            .logo img {
+                width: 100px;
             }
         }
 
@@ -990,6 +1046,44 @@
             outline: 2px solid var(--brand-red);
             outline-offset: 2px;
         }
+
+        /* ===== DEVELOPER CREDIT STYLES ===== */
+        
+        .developer-credit {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            padding: var(--space-6) 0;
+            text-align: center;
+            margin-top: var(--space-4);
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .developer-credit {
+                padding: var(--space-4) 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer-logo {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-logo {
+                width: 90px;
+            }
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -997,15 +1091,15 @@
     <header>
         <nav role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <a href="../src/index.html">
-                    <img src="../src/assets/logo-final.png" alt="SSKY Logo" style="width: 120px; height: auto; max-width: 120px;">
+                <a href="index.html">
+                    <img src="assets/logo-final.png" alt="SSKY Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiNFNjAwMjMiLz48dGV4dCB4PSI2MCIgeT0iNDUiIGZvcnQtZmFtaWx5PSJzeXN0ZW0tdWkiIGZvcnQtc2l6ZT0iMjQiIGZvcnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U1NLWTE8L3RleHQ+PC9zdmc='">
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="../src/index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#" class="active" aria-current="page">Products</a></li>
-                <li><a href="../about/index.html">About</a></li>
-                <li><a href="../src/index.html#contact">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                 <svg class="theme-icon" id="themeIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1018,7 +1112,7 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="breadcrumb-container">
-            <a href="../src/index.html">Home</a>
+            <a href="index.html">Home</a>
             <span class="breadcrumb-separator">›</span>
             <span>Die-cut Stickers</span>
         </div>
@@ -1339,46 +1433,18 @@
                     loadingOverlay.classList.remove('show');
                 }
             }
-        }
 
-        // Global functions without modal references
-        let stickerPage;
-
-        function filterByCategory(category) {
-            if (stickerPage) {
-                stickerPage.filterByCategory(category);
-            }
-        }
-
-        function clearFilters() {
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) {
-                searchInput.value = '';
-            }
-            if (stickerPage) {
-                stickerPage.currentSearch = '';
-                stickerPage.filterByCategory('all');
-            }
-        }
-
-        function closeLightbox() {
-            if (stickerPage) {
-                stickerPage.closeLightbox();
-            }
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            stickerPage = new DiecutStickersPage();
-            window.stickerPage = stickerPage;
-        });
-
-        if (document.readyState === 'interactive' || document.readyState === 'complete') {
-            if (!stickerPage) {
-                stickerPage = new DiecutStickersPage();
-                window.stickerPage = stickerPage;
-            }
-        }
-    </script>
-</body>
-</html>
+            filterByCategory(category) {
+                this.currentFilter = category;
+                
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                const activeBtn = Array.from(document.querySelectorAll('.category-btn')).find(btn => {
+                    const onclick = btn.getAttribute('onclick');
+                    return onclick && onclick.includes(`'${category}'`);
+                });
+                
+                if

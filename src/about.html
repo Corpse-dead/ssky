@@ -5,18 +5,16 @@
     <meta name="description" content="About SSKY Printing - Your premium poster printing solution with high-quality custom prints and designs.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - SSKY Printing</title>
-    <link rel="icon" type="image/svg+xml" href="../src/assets/favicon.svg">
-    <link rel="stylesheet" href="../src/styles/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="styles/style.css">
     <style>
-        /* ===== THEME VARIABLES ===== */
+        /* Import consistent theme system */
         :root {
-            /* Brand Colors - Consistent with SSKY branding */
             --brand-red: #e60023;
             --brand-red-hover: #c5001f;
             --brand-red-light: rgba(230, 0, 35, 0.1);
             --brand-red-dark: rgba(230, 0, 35, 0.2);
             
-            /* Light Theme - Clean & Minimal */
             --bg-primary: #ffffff;
             --bg-secondary: #f8fafc;
             --bg-tertiary: #f1f5f9;
@@ -26,24 +24,12 @@
             --text-muted: #64748b;
             --border-color: #e2e8f0;
             --border-light: #f1f5f9;
-            --shadow-color: rgba(0, 0, 0, 0.1);
             
-            /* Animation Curves - Enhanced UX */
-            --spring-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            --smooth-ease: cubic-bezier(0.4, 0, 0.2, 1);
-            --elastic-out: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             
-            /* Typography Scale */
-            --text-xs: 0.75rem;
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-lg: 1.125rem;
-            --text-xl: 1.25rem;
-            --text-2xl: 1.5rem;
-            --text-3xl: 1.875rem;
-            --text-4xl: 2.25rem;
-            
-            /* Spacing System */
             --space-1: 0.25rem;
             --space-2: 0.5rem;
             --space-3: 0.75rem;
@@ -54,39 +40,38 @@
             --space-16: 4rem;
             --space-20: 5rem;
             
-            /* Border Radius */
-            --radius-sm: 0.375rem;
-            --radius-md: 0.5rem;
-            --radius-lg: 0.75rem;
-            --radius-xl: 1rem;
-            --radius-2xl: 1.5rem;
-            --radius-3xl: 1.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            
+            --radius-md: 0.375rem;
+            --radius-lg: 0.5rem;
+            --radius-xl: 0.75rem;
+            --radius-2xl: 1rem;
+            --radius-3xl: 1.5rem;
             --radius-full: 9999px;
             
-            /* Shadows */
-            --shadow-sm: 0 1px 3px var(--shadow-color);
-            --shadow-md: 0 4px 6px var(--shadow-color);
-            --shadow-lg: 0 10px 15px var(--shadow-color);
-            --shadow-xl: 0 25px 50px var(--shadow-color);
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
             
-            /* Transitions */
-            --transition-fast: 0.15s;
-            --transition-default: 0.3s;
-            --transition-slow: 0.5s;
+            --z-sticky: 1020;
+            --z-modal: 1050;
         }
 
-        /* Dark Theme Variables */
         [data-theme="dark"] {
             --bg-primary: #0f172a;
             --bg-secondary: #1e293b;
             --bg-tertiary: #334155;
             --bg-card: #1e293b;
-            --text-primary: #f1f5f9;
+            --text-primary: #f8fafc;
             --text-secondary: #cbd5e1;
             --text-muted: #94a3b8;
             --border-color: #334155;
             --border-light: #475569;
-            --shadow-color: rgba(0, 0, 0, 0.3);
         }
 
         /* Base styles */
@@ -106,103 +91,109 @@
 
         /* Header styles */
         header {
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
-            z-index: 100;
-            backdrop-filter: blur(8px);
-            transition: all var(--transition-default);
+            z-index: var(--z-sticky);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all var(--transition-normal);
+        }
+
+        [data-theme="dark"] header {
+            background: rgba(15, 23, 42, 0.95);
         }
 
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: var(--space-4) var(--space-6);
+            padding: 0 var(--space-6);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4rem;
+            gap: var(--space-6);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: var(--space-2);
+            gap: var(--space-3);
+            flex-shrink: 0;
         }
 
-        .logo img {
+        .logo-enhanced {
             width: 120px;
             height: auto;
             max-width: 120px;
-            border-radius: var(--radius-sm);
+            transition: transform var(--transition-normal);
         }
 
-        .logo-text {
-            font-size: var(--text-xl);
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
+        .logo-enhanced:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
             display: flex;
-            list-style: none;
-            gap: var(--space-8);
             align-items: center;
+            gap: var(--space-1);
+            list-style: none;
+            flex: 1;
+            margin-left: var(--space-8);
         }
 
-        .nav-links a {
+        .nav-links li a {
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+            padding: var(--space-2) var(--space-4);
             color: var(--text-secondary);
             text-decoration: none;
+            font-size: var(--text-sm);
             font-weight: 500;
-            position: relative;
-            padding: var(--space-2) 0;
-            transition: all var(--transition-default);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-fast);
         }
 
-        .nav-links a.active,
-        .nav-links a:hover {
+        .nav-links li a:hover,
+        .nav-links li a.active {
             color: var(--brand-red);
+            background-color: var(--brand-red-light);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--brand-red);
-            transition: width var(--transition-default) var(--smooth-ease);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        /* Theme Toggle */
         .theme-toggle {
+            width: 2.5rem;
+            height: 1.5rem;
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-full);
-            width: 44px;
-            height: 44px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+        }
+
+        .theme-toggle-indicator {
+            width: 1.25rem;
+            height: 1.25rem;
+            background: var(--bg-card);
+            border-radius: 50%;
+            transition: transform var(--transition-normal);
+            box-shadow: var(--shadow-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: all var(--transition-default);
         }
 
-        .theme-toggle:hover {
-            background: var(--bg-tertiary);
-            transform: scale(1.1);
+        [data-theme="dark"] .theme-toggle-indicator {
+            transform: translateX(1rem);
         }
 
         .theme-icon {
-            width: 20px;
-            height: 20px;
+            width: 0.75rem;
+            height: 0.75rem;
             color: var(--text-secondary);
         }
 
@@ -235,7 +226,7 @@
 
         /* Main content styles */
         .main-content {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 var(--space-6);
         }
@@ -525,9 +516,9 @@
         }
 
         .footer-logo {
-            width: 120px;
+            width: 140px; /* Increased from 120px */
             height: auto;
-            transition: transform 0.3s ease;
+            transition: transform var(--transition-normal);
         }
 
         .footer-logo:hover {
@@ -536,13 +527,13 @@
 
         @media (max-width: 640px) {
             .footer-logo {
-                width: 100px;
+                width: 120px; /* Increased from 100px */
             }
         }
 
         @media (max-width: 480px) {
             .footer-logo {
-                width: 90px;
+                width: 110px; /* Increased from 90px */
             }
         }
 
@@ -561,15 +552,15 @@
     <header>
         <nav role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <a href="../src/index.html">
-                    <img src="../src/assets/logo-final.png" alt="SSKY Logo" class="logo-enhanced" onerror="this.style.display='none'">
+                <a href="index.html">
+                    <img src="assets/logo-final.png" alt="SSKY Logo" class="logo-enhanced" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiNFNjAwMjMiLz48dGV4dCB4PSI2MCIgeT0iNDUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWkiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U1NLWTI8L3RleHQ+PC9zdmc+'">
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="../src/index.html">Home</a></li>
-                <li><a href="../posters/index.html">Products</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="posters.html">Products</a></li>
                 <li><a href="#" class="active" aria-current="page">About</a></li>
-                <li><a href="../src/index.html#contact">Contact</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                 <div class="theme-toggle-indicator">
@@ -746,6 +737,7 @@
 
     <!-- Developer Credit -->
     <div class="developer-credit" role="contentinfo" aria-label="Developer information">
+        <img src="assets/logo-final.png" alt="SSKY Logo" class="footer-logo" onerror="this.style.display='none'">
         <p>Designed and developed by Krrish Sharma</p>
     </div>
 
